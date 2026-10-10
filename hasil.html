@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasil Biodata</title>
+    <style>
+    :root {
+        --bg: #0d0f13;
+        --card: #1a1e24;
+        --border: #30353d;
+        --text: white;
+        --hover: #242932;
+    }
+
+    body.light {
+        --bg: #f4f4f9;
+        --card: white;
+        --border: #d5d9df;
+        --text: #17191c;
+        --hover: #e7eaee;
+    }
+
+    body {
+        font-family: Arial;
+        padding: 20px;
+
+        background: var(--bg);
+        color: var(--text);
+
+        transition: 0.3s;
+    }
+
+    .container {
+        max-width: 500px;
+        background: var(--card);
+        padding: 20px;
+        border-radius: 8px;
+        margin: auto;
+
+        border: 1px solid var(--border);
+    }
+
+    .theme-button {
+        float: right;
+
+        width: 40px;
+        height: 40px;
+
+        border: 1px solid var(--border);
+        border-radius: 10px;
+
+        background: var(--card);
+        color: var(--text);
+
+        font-size: 18px;
+
+        cursor: pointer;
+    }
+
+    .back-button {
+        display: inline-block;
+
+        padding: 10px 15px;
+
+        background: var(--hover);
+        color: var(--text);
+
+        text-decoration: none;
+
+        border-radius: 8px;
+    }
+</style>
+</head>
+<body>
+    <!-- Kotak pembungkus halaman hasil -->
+    <div class="container">
+        <div class="container">
+
+    <button class="theme-button" id="themeButton">
+        ☀️
+    </button>
+
+    <h2>Data Berhasil Disimpan</h2>
+        <h2>Data Berhasil Disimpan</h2>
+        
+        <!-- Elemen kosong tempat data biodata akan dimunculkan oleh JavaScript -->
+        <div id="hasil"></div>
+        
+        <br>
+        <!-- Tombol/Link untuk kembali ke halaman form pengisian awal -->
+        <a href="index.html">Kembali ke Form</a>
+        
+    </div>
+    
+    <script>
+        // Mengambil data teks dari memori browser (LocalStorage) dan mengubahnya kembali menjadi objek JavaScript
+        const data = JSON.parse(localStorage.getItem('biodata'));
+        
+        // Mengecek jika data tersebut ada, lalu menampilkannya ke dalam div ber-id 'hasil' menggunakan template literal
+        if(data) {
+            document.getElementById('hasil').innerHTML = `
+                <p><b>Nama:</b> ${data.nama}</p>
+                <p><b>Alamat:</b> ${data.alamat}</p>
+                <p><b>Jurusan:</b> ${data.jurusan}</p>
+                <p><b>Jenis Kelamin:</b> ${data.jk}</p>
+                <p><b>Tinggi Badan:</b> ${data.tinggi} cm</p>
+                <p><b>Berat Badan:</b> ${data.berat} kg</p>
+                <p><b>Hobi:</b> ${data.hobi}</p>
+                <p><b>No. HP:</b> ${data.hp}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>

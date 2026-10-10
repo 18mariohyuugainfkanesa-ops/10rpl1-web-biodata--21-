@@ -1,0 +1,327 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   TEMA
+========================= */
+
+:root {
+    --bg: #0d0f13;
+    --card: #1a1e24;
+    --border: #30353d;
+    --text: white;
+    --muted: #9ba3b1;
+    --hover: #242932;
+}
+
+body.light {
+    --bg: #f2f4f7;
+    --card: white;
+    --border: #d5d9df;
+    --text: #17191c;
+    --muted: #606873;
+    --hover: #e7eaee;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 540px;
+
+    padding: 25px 15px 50px;
+}
+
+
+/* =========================
+   BAGIAN ATAS
+========================= */
+
+.top-bar {
+    width: 100%;
+    min-height: 56px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 18px;
+
+    margin-bottom: 50px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+
+    transition:
+        background 0.3s ease,
+        border 0.3s ease;
+}
+
+.top-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   BAGIAN KANAN
+========================= */
+
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+.timer {
+    color: var(--muted);
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================
+   TOMBOL TEMA
+========================= */
+
+.theme-button {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--card);
+    color: var(--text);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+}
+
+.theme-button:hover {
+    background: var(--hover);
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   FOTO PROFIL
+========================= */
+
+.foto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.foto-profil {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid var(--text);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   JUDUL
+========================= */
+
+h1 {
+    text-align: center;
+
+    font-size: 42px;
+    line-height: 1.1;
+
+    margin-bottom: 45px;
+
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   TOMBOL MENU
+========================= */
+
+.menu-button {
+    width: 100%;
+    min-height: 72px;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    background: var(--card);
+    color: var(--text);
+
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+}
+
+.menu-button:hover {
+    background: var(--hover);
+
+    transform: translateY(-2px);
+}
+
+.menu-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.icon {
+    font-size: 24px;
+    width: 30px;
+    text-align: center;
+}
+
+
+/* =========================
+   MODE TERANG
+========================= */
+
+body.light .menu-button {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body.light .top-bar {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 18px 15px 40px;
+    }
+
+    .top-bar {
+        margin-bottom: 40px;
+    }
+
+    .top-text {
+        font-size: 16px;
+    }
+
+    .top-right {
+        gap: 10px;
+    }
+
+    .timer {
+        font-size: 14px;
+    }
+
+    .theme-button {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .foto-profil {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 35px;
+    }
+
+    .menu-button {
+        min-height: 64px;
+        font-size: 18px;
+    }
+
+    .icon {
+        font-size: 23px;
+    }
+}
